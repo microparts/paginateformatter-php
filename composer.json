@@ -1,5 +1,5 @@
 {
-    "name": "roquie/paginateformatter-php",
+    "name": "microparts/paginateformatter-php",
     "description": "Pagination format for TeamcIO standards.",
     "type": "library",
     "license": "MIT",
@@ -17,7 +17,7 @@
     },
     "autoload": {
         "psr-4": {
-            "Roquie\\PaginateFormatter\\": "src"
+            "Microparts\\PaginateFormatter\\": "src"
         }
     }
 }

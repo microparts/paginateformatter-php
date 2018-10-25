@@ -6,7 +6,7 @@
  * Date: 23/10/2018
  */
 
-namespace Roquie\PaginateFormatter;
+namespace Microparts\PaginateFormatter;
 
 
 /**

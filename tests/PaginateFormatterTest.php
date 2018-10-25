@@ -2,7 +2,7 @@
 
 use Pagerfanta\Adapter\ArrayAdapter;
 use Pagerfanta\Pagerfanta;
-use Roquie\PaginateFormatter\PaginateFormatter;
+use Microparts\PaginateFormatter\PaginateFormatter;
 
 /**
  * Created by Roquie.
