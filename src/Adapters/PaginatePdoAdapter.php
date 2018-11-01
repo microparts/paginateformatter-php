@@ -8,47 +8,10 @@
 
 namespace Microparts\PaginateFormatter\Adapters;
 
-use Pagerfanta\Adapter\AdapterInterface;
 use PDO;
 
-class PaginatePdoAdapter implements AdapterInterface
+class PaginatePdoAdapter extends BasePdoAdapter
 {
-    /**
-     * @var \PDO
-     */
-    private $pdo;
-
-    /**
-     * @var string
-     */
-    private $table;
-
-    /**
-     * PaginatePdoAdapter constructor.
-     *
-     * @param \PDO $pdo
-     * @param string $table
-     */
-    public function __construct(PDO $pdo, string $table)
-    {
-        $this->pdo    = $pdo;
-        $this->table  = $table;
-    }
-
-    /**
-     * Returns the number of results.
-     *
-     * @return integer The number of results.
-     */
-    public function getNbResults()
-    {
-        $stmt = $this->pdo->prepare("SELECT count(1) FROM {$this->table}");
-        $stmt->execute();
-        $result = $stmt->fetch();
-
-        return $result['count'] ?? 0;
-    }
-
     /**
      * Returns an slice of the results.
      *
