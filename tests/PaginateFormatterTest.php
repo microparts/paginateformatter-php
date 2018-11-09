@@ -33,10 +33,22 @@ class PaginateFormatterTest extends \PHPUnit\Framework\TestCase
         ];
 
         $formatter = new PaginateFormatter(new Pagerfanta(new ArrayAdapter($items)));
+        $formatter->setMeta(['lang' => 'ru']);
+        $formatter->setItems(array_map(function ($values) {
+            return array_map(function ($item) {
+                return $item * 2;
+            }, $values);
+        }, $items));
 
         $results = [
-            'data' => $items,
+            'data' => [
+                [2, 4, 6],
+                [2, 4, 6],
+                [2, 4, 6],
+                [2, 4, 6],
+            ],
             'meta' => [
+                'lang' => 'ru',
                 'pagination' => [
                     'total'        => count($items),
                     'per_page'     => 10,

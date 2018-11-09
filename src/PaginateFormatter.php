@@ -28,6 +28,11 @@ class PaginateFormatter implements PaginateFormatterInterface
     private $items = null;
 
     /**
+     * @var array
+     */
+    private $meta = [];
+
+    /**
      * PaginateFormatter constructor.
      *
      * @param \Pagerfanta\Pagerfanta $pagerfanta
@@ -46,6 +51,17 @@ class PaginateFormatter implements PaginateFormatterInterface
     public function setItems(array $items)
     {
         $this->items = $items;
+
+        return $this;
+    }
+
+    /**
+     * @param array $meta
+     * @return \Microparts\PaginateFormatter\PaginateFormatter
+     */
+    public function setMeta(array $meta)
+    {
+        $this->meta = $meta;
 
         return $this;
     }
@@ -91,9 +107,9 @@ class PaginateFormatter implements PaginateFormatterInterface
 
         return [
             'data' => $this->items ?? $collection ?? [],
-            'meta' => [
+            'meta' => array_merge($this->meta, [
                 'pagination' => $this->getPageOptions()
-            ]
+            ])
         ];
     }
 }
