@@ -2,7 +2,7 @@
     "name": "microparts/paginateformatter-php",
     "description": "Pagination format for TeamcIO standards.",
     "type": "library",
-    "license": "GNU GPL v3",
+    "license": "GPL-3.0-only",
     "authors": [
         {
             "name": "roquie",
