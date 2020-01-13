@@ -1,25 +1,21 @@
-<?php
+<?php declare(strict_types=1);
+
+namespace Microparts\Tests;
 
 use Pagerfanta\Adapter\ArrayAdapter;
 use Pagerfanta\Pagerfanta;
 use Microparts\PaginateFormatter\PaginateFormatter;
+use PHPUnit\Framework\TestCase;
+use stdClass;
+use TypeError;
 
-/**
- * Created by Roquie.
- * E-mail: roquie0@gmail.com
- * GitHub: Roquie
- * Date: 23/10/2018
- */
-
-
-class PaginateFormatterTest extends \PHPUnit\Framework\TestCase
+class PaginateFormatterTest extends TestCase
 {
-    /**
-     * @expectedException \TypeError
-     * @expectedExceptionMessage must be an instance of Pagerfanta\Pagerfanta
-     */
     public function testConstructorMustBeToAcceptPagerfantaInstance()
     {
+        $this->expectException(TypeError::class);
+        $this->expectErrorMessage('must be an instance of Pagerfanta\Pagerfanta');
+
         new PaginateFormatter(new stdClass());
     }
 

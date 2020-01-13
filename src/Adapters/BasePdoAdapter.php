@@ -1,10 +1,4 @@
-<?php
-/**
- * Created by Roquie.
- * E-mail: roquie0@gmail.com
- * GitHub: Roquie
- * Date: 29/10/2018
- */
+<?php declare(strict_types=1);
 
 namespace Microparts\PaginateFormatter\Adapters;
 

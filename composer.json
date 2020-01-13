@@ -1,25 +1,31 @@
 {
-    "name": "microparts/paginateformatter-php",
-    "description": "Pagination format for TeamcIO standards.",
-    "type": "library",
-    "license": "GPL-3.0-only",
-    "authors": [
-        {
-            "name": "roquie",
-            "email": "roquie0@gmail.com"
-        }
-    ],
-    "require": {
-        "ext-pdo": "*",
-        "pagerfanta/pagerfanta": "^2.0"
-    },
-    "require-dev": {
-        "phpunit/phpunit": "^7.4",
-        "envms/fluentpdo": "^2.1"
-    },
-    "autoload": {
-        "psr-4": {
-            "Microparts\\PaginateFormatter\\": "src"
-        }
+  "name": "microparts/paginateformatter-php",
+  "description": "Pagination format for spacetab.io standards.",
+  "type": "library",
+  "license": "GPL-3.0-only",
+  "authors": [
+    {
+      "name": "roquie",
+      "email": "roquie0@gmail.com"
     }
+  ],
+  "require": {
+    "ext-pdo": "*",
+    "pagerfanta/pagerfanta": "^2.1"
+  },
+  "require-dev": {
+    "phpunit/phpunit": "^8",
+    "envms/fluentpdo": "^2.1",
+    "phpstan/phpstan": "^0.12.5"
+  },
+  "autoload": {
+    "psr-4": {
+      "Microparts\\PaginateFormatter\\": "src"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "Microparts\\Tests\\PaginateFormatter\\": "src"
+    }
+  }
 }

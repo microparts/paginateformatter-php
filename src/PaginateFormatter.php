@@ -1,20 +1,9 @@
-<?php
-/**
- * Created by Roquie.
- * E-mail: roquie0@gmail.com
- * GitHub: Roquie
- * Date: 23/10/2018
- */
+<?php declare(strict_types=1);
 
 namespace Microparts\PaginateFormatter;
 
 use Pagerfanta\Pagerfanta;
 
-/**
- * Class PaginateFormatter
- *
- * @package Roquie\PaginateFormatter
- */
 class PaginateFormatter implements PaginateFormatterInterface
 {
     /**
@@ -74,6 +63,7 @@ class PaginateFormatter implements PaginateFormatterInterface
     public function getPageOptions()
     {
         $prevPage = null;
+
         if ($this->pagerfanta->hasPreviousPage()) {
             $prevPage = $this->pagerfanta->getPreviousPage();
         }
@@ -101,6 +91,7 @@ class PaginateFormatter implements PaginateFormatterInterface
     public function format()
     {
         $collection = $this->pagerfanta->getCurrentPageResults();
+
         if (method_exists($collection, 'toArray')) {
             $collection = $collection->toArray();
         }

@@ -7,7 +7,7 @@ jobs:
   build:
     docker:
     # specify the version you desire here
-    - image: circleci/php:7.2-browsers
+    - image: circleci/php:7.4-browsers
 
     working_directory: ~/repo
 
@@ -27,6 +27,9 @@ jobs:
           paths:
           - ./vendor
           key: v1-dependencies-{{ checksum "composer.json" }}
+
+      # run static analyse
+      - run: vendor/bin/phpstan analyse src --level 5
 
       # run tests!
       - run: vendor/bin/phpunit
