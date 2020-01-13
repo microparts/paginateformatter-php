@@ -2,12 +2,14 @@
 
 namespace Microparts\Tests;
 
+use Microparts\PaginateFormatter\Adapters\SqlAmphpAdapter;
 use Pagerfanta\Adapter\ArrayAdapter;
 use Pagerfanta\Pagerfanta;
 use Microparts\PaginateFormatter\PaginateFormatter;
 use PHPUnit\Framework\TestCase;
 use stdClass;
 use TypeError;
+use Amp\Postgres;
 
 class PaginateFormatterTest extends TestCase
 {
@@ -58,4 +60,17 @@ class PaginateFormatterTest extends TestCase
 
         $this->assertEquals($results, $formatter->format());
     }
+
+//    public function testAmphp()
+//    {
+//        $config = Postgres\ConnectionConfig::fromString("host=localhost user=roquie dbname=microservice_contacts");
+//
+//        /** @var Postgres\Pool $pool */
+//        $pool = Postgres\pool($config);
+//
+//        $formatter = new PaginateFormatter(new Pagerfanta(new SqlAmphpAdapter($pool, 'contacts')));
+//        $formatter->setMeta(['lang' => 'ru']);
+//
+//        dd($formatter->format());
+//    }
 }
