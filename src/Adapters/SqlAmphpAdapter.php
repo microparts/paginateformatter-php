@@ -37,7 +37,7 @@ class SqlAmphpAdapter implements AdapterInterface
      * @throws \Amp\Sql\FailureException
      * @throws \Throwable
      */
-    public function getNbResults(): int
+    public function getNbResults()
     {
         /** @var ResultSet $result */
         $result = wait($this->pool->query("SELECT count(1) FROM {$this->table}"));
@@ -57,7 +57,7 @@ class SqlAmphpAdapter implements AdapterInterface
      * @throws \Amp\Sql\FailureException
      * @throws \Throwable
      */
-    public function getSlice($offset, $length): array
+    public function getSlice($offset, $length)
     {
         /** @var \Amp\Sql\Statement $stmt */
         $stmt = wait($this->pool->prepare("SELECT * FROM {$this->table} OFFSET ? LIMIT ?"));
