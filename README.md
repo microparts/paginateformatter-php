@@ -4,6 +4,11 @@ Paginate Formatter For PHP
 [![CircleCI](https://circleci.com/gh/microparts/paginateformatter-php/tree/master.svg?style=svg)](https://circleci.com/gh/microparts/paginateformatter-php/tree/master)
 [![codecov](https://codecov.io/gh/microparts/paginateformatter-php/branch/master/graph/badge.svg)](https://codecov.io/gh/microparts/paginateformatter-php)
 
+
+**THIS PACKAGE PERMANENTLY MOVED TO https://github.com/spacetab-io/pagerfanta-adapt-php**
+
+__________
+
 This a simple formatter based on [Pagerfanta](https://github.com/whiteoctober/Pagerfanta) library.
 Specially created for follow up corporate standards of pagination format.
 
